@@ -13,10 +13,8 @@
         <button id="searchBtn" type="button" name="button">筛选</button>
       </section>
 
-      <ul class="resultList">
-        <li>1</li>
-        <li>1</li>
-        <li>1</li>
+      <ul class="resultList" data-bind="foreach: positionList">
+        <li data-bind="text: positionName">11111</li>
       </ul>
     </div>
     <div id="container"></div>

@@ -18,7 +18,7 @@ window.onload = function() {
         title: '贵阳阿哈湖国家湿地公园'
     }];
 
-    let markerPosition={
+    let markerPosition = {
         //封装地标
         initPosition: function() {
             let markerArray = Positons.map(function(position) {
@@ -79,4 +79,6 @@ window.onload = function() {
     //启动应用交互
     ViewModel.initApp()
 
+    // Activates knockout.js
+    //ko.applyBindings(new ViewModel());
 };
