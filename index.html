@@ -1,23 +1,27 @@
 <html>
-
 <head>
-  <style>
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-    #container {
-      height: 100%;
-    }
-  </style>
+  <link rel="stylesheet" href="css/main.css">
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 </head>
 
 <body>
-  <div id="container"></div>
+  <main>
+    <div class="leftContainer">
+      <h3 class="searchTitle">地点选择</h3>
+      <section class="searchContainer">
+        <input class="locationSearch" type="text" name="" value="">
+        <button id="searchBtn" type="button" name="button">筛选</button>
+      </section>
+
+      <ul class="resultList">
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+      </ul>
+    </div>
+    <div id="container"></div>
+  </main>
+
   <script src="js/main.js"></script>
 
   <!-- 异步加载 JavaScript API。-->

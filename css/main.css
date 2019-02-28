@@ -1,0 +1,48 @@
+* {
+    border: 1px solid red !important;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 去除无需标签点符号 */
+li {
+    list-style-type: none;
+    height: 40px;
+}
+
+main {
+    display: flex;
+}
+
+#container {
+    width: 80%;
+    height: 100%;
+}
+
+.searchTitle {
+    text-align: center;
+}
+
+.leftContainer {
+    width: 20%;
+    height: 100%;
+}
+
+.searchContainer {
+    display: flex;
+}
+
+.locationSearch {
+    height: 40px;
+    width: 100%;
+}
+
+#searchBtn {
+    height: 40px;
+    width: 80px;
+}
