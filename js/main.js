@@ -72,16 +72,9 @@ window.onload = function() {
                 //设置当前标记跳动
                 marker.setAnimation('AMAP_ANIMATION_BOUNCE');
 
-                //添加信息
-                //构建自定义信息窗体
-                let infoWindow = new AMap.InfoWindow({
-                    // anchor: 'bottom-center',
-                    offset: new AMap.Pixel(16, -45),//窗体位置的偏移量
-                    content: item.positionName(),
-                });
+                //添加窗体信息
+                self.addInfoWindow(item)
 
-                // 传入地标经纬度
-                infoWindow.open(map, item.positionDetail())
             });
         });
         //将5个地标添加进地图
@@ -100,6 +93,9 @@ window.onload = function() {
             marker.setMap(map);
             // 设置点标记的动画效果，此处为弹跳效果
             marker.setAnimation('AMAP_ANIMATION_BOUNCE');
+
+            //添加窗体信息
+            self.addInfoWindow(position)
         }
 
         //移除所有跳动
@@ -107,6 +103,18 @@ window.onload = function() {
             positionList.forEach(function(item) {
                 item.marker().setAnimation('AMAP_ANIMATION_NONE')
             })
+        }
+
+        this.addInfoWindow=function(item) {
+            //构建自定义信息窗体
+            let infoWindow = new AMap.InfoWindow({
+                // anchor: 'bottom-center',
+                offset: new AMap.Pixel(16, -45),//窗体位置的偏移量
+                content: item.positionName()
+            });
+
+            // 传入地标经纬度
+            infoWindow.open(map, item.positionDetail())
         }
     }
 
