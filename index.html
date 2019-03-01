@@ -14,17 +14,17 @@
       </section>
 
       <ul class="resultList" data-bind="foreach: positionList">
-        <li data-bind="text: positionName">11111</li>
+        <li data-bind="text: positionName,click: $parent.positionItemClick"></li>
       </ul>
     </div>
     <div id="container"></div>
   </main>
-
+  <script src="js/knockout-3.4.2.js"></script>
   <script src="js/main.js"></script>
 
   <!-- 异步加载 JavaScript API。-->
   <script src="https://webapi.amap.com/maps?v=1.4.12&key=42c524fc7feb62c8fb8ae3860d697a61&callback=onload"></script>
-  <script src="js/knockout-3.4.2.js"></script>
+
 
 </body>
 
