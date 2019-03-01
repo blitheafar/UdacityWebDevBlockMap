@@ -22,6 +22,7 @@ window.onload = function() {
         //封装地标
         //给观察对象提供地点名
         this.positionName = ko.observable(position.title)
+        this.positionDetail=ko.observable(position.position)
         this.marker = ko.observable(new AMap.Marker(position))
     }
 
@@ -70,6 +71,17 @@ window.onload = function() {
 
                 //设置当前标记跳动
                 marker.setAnimation('AMAP_ANIMATION_BOUNCE');
+
+                //添加信息
+                //构建自定义信息窗体
+                let infoWindow = new AMap.InfoWindow({
+                    // anchor: 'bottom-center',
+                    offset: new AMap.Pixel(16, -45),//窗体位置的偏移量
+                    content: item.positionName(),
+                });
+
+                // 传入地标经纬度
+                infoWindow.open(map, item.positionDetail())
             });
         });
         //将5个地标添加进地图
@@ -91,7 +103,7 @@ window.onload = function() {
         }
 
         //移除所有跳动
-        this.removeAnimation=function() {
+        this.removeAnimation = function() {
             positionList.forEach(function(item) {
                 item.marker().setAnimation('AMAP_ANIMATION_NONE')
             })
