@@ -22,7 +22,7 @@ window.onload = function() {
         //封装地标
         //给观察对象提供地点名
         this.positionName = ko.observable(position.title)
-        this.positionDetail=ko.observable(position.position)
+        this.positionDetail = ko.observable(position.position)
         this.marker = ko.observable(new AMap.Marker(position))
     }
 
@@ -105,17 +105,28 @@ window.onload = function() {
             })
         }
 
-        this.addInfoWindow=function(item) {
+        this.addInfoWindow = function(item) {
             //构建自定义信息窗体
             let infoWindow = new AMap.InfoWindow({
                 // anchor: 'bottom-center',
-                offset: new AMap.Pixel(16, -45),//窗体位置的偏移量
+                offset: new AMap.Pixel(16, -45), //窗体位置的偏移量
                 content: item.positionName()
             });
 
             // 传入地标经纬度
             infoWindow.open(map, item.positionDetail())
         }
+
+        //搜索关键字添加观察对象
+        this.query = ko.observable("")
+
+        this.filteredPositionList = ko.computed(function() {
+            //通过输入关键字过滤地点list
+            return this.positionList().filter(function(item) {
+                return item.positionName().indexOf(self.query().trim())!=-1;
+            })
+        }, this);
+
     }
 
     // Activates knockout.js

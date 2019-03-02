@@ -12,11 +12,10 @@
     <div class="leftContainer">
       <h3 class="searchTitle">地点选择</h3>
       <section class="searchContainer">
-        <input class="locationSearch" type="text" name="" value="">
-        <button id="searchBtn" type="button" name="button">筛选</button>
+        <input class="locationSearch" type="text" data-bind="textInput: query" placeholder="请输入地点">
       </section>
 
-      <ul class="resultList" data-bind="foreach: positionList">
+      <ul class="resultList" data-bind="foreach: filteredPositionList">
         <li data-bind="text: positionName,click: $parent.listPositionClick"></li>
       </ul>
     </div>
