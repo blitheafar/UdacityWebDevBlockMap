@@ -1,31 +1,32 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
-  <link rel="stylesheet" href="css/main.css">
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
-  <main>
-    <div class="leftContainer">
-      <h3 class="searchTitle">地点选择</h3>
-      <section class="searchContainer">
-        <input class="locationSearch" type="text" data-bind="textInput: query" placeholder="请输入地点">
-      </section>
+<body class="container-fluid">
+    <main class="row">
+        <div class="col-sm-3">
+            <h3 class="text-center">地点选择</h3>
+            <section class="text-center">
+                <input class="" type="text" data-bind="textInput: query" placeholder="请输入地点">
+            </section>
 
-      <ul class="resultList" data-bind="foreach: filteredPositionList">
-        <li data-bind="text: positionName,click: $parent.listPositionClick"></li>
-      </ul>
-    </div>
-    <div id="container"></div>
-  </main>
-  <script src="js/knockout-3.4.2.js"></script>
-  <script src="js/main.js"></script>
+            <ul class="" data-bind="foreach: filteredPositionList">
+                <li data-bind="text: positionName,click: $parent.listPositionClick"></li>
+            </ul>
+        </div>
 
-  <!-- 异步加载 JavaScript API。-->
-  <script src="https://webapi.amap.com/maps?v=1.4.12&key=42c524fc7feb62c8fb8ae3860d697a61"></script>
+        <div class="col-sm-9" id="container"></div>
+    </main>
+    <script src="js/knockout-3.4.2.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- 异步加载 JavaScript API。-->
+    <script src="https://webapi.amap.com/maps?v=1.4.12&key=42c524fc7feb62c8fb8ae3860d697a61"></script>
 
 
 </body>
